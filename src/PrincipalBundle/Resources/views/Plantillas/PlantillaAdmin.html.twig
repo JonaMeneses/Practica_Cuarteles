@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('Public/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('Public/css/estilos.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('Public/css/simple-sidebar.css') }}">
+            
+        {% endblock %}
+        
+    </head>
+    <body>
+<img src="{{asset('Public/img/militar2.jpg')}}" class="img-fondo-inicio">
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+
+     
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <li class="hamburger">
+    <span class="hamburger-inner"></span>
+    </li>
+     
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+       <li> <a class="navbar-brand" style="margin-left: 1px;" href="{{ asset('app_dev.php/index') }}">SMN</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registros <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ path('listadoCuartel') }}">Cuarteles</a></li>
+            <li><a href="{{ path('listadoCompania') }}">Compañias</a></li>
+            <li><a href="{{ path('listadoCuerpo') }}">Cuerpos de ejercito</a></li>
+            <li><a href="{{ path('listadoServicio') }}">Servicios</a></li>
+            <li><a href="{{ path('listadoSoldado') }}">Soldados</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="">Bienvenido 
+         {% if app.user != null %}
+             {{ app.user.nombre}}
+           {% endif %}</a></li>
+        <li><a href="{{ path('logout') }}">Salir</a></li>
+        <li class="dropdown">
+          
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div id="wrapper" class="toggled">
+      
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Registros
+                    </a>
+               </li>
+               <li><a href="{{ path('listadoCuartel') }}">Cuarteles</a></li>
+            <li><a href="{{ path('listadoCompania') }}">Compañias</a></li>
+            <li><a href="{{ path('listadoCuerpo') }}">Cuerpos de ejercito</a></li>
+            <li><a href="{{ path('listadoServicio') }}">Servicios</a></li>
+            <li><a href="{{ path('listadoSoldado') }}">Soldados</a></li>
+              </ul>
+
+
+          </div>
+
+
+   
+
+          <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class="col-md-12">
+                      <div class="main">
+ {% block body %}{% endblock %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+       
+            </div>  
+
+ 
+
+ </div>
+        {% block pie %}
+        <footer class="pie">
+  <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-4">
+        
+      </div>
+      <div class="col-md-4">
+        <span align="justify">
+          <h2>Contactame</h2>
+          <p>Email: <a href="">Jona_Meneses@hotmail.com</a><br>
+          Direccion: Avenida Tecnologico s/n. Colonia Los Angeles <br>
+          Telefono: 288-125-59-78</p>
+         
+        </span>
+      </div>
+      <div class="col-md-4">
+       <span align="justify">
+          <h2>Sigueme</h2>
+          <a href="http://www.facebook.com/AQUI_TU_PAGINA" target="_blank"><img alt="Siguenos en Facebook" src="https://lh3.googleusercontent.com/-NSLbC_ztNls/T6VX0g6z8AI/AAAAAAAAA0A/_vyIBrmZbuY/s48/facebook48.png" width=48 height=48  /></a>
+
+          <a href="http://twitter.com/AQUI_TU_USUARIO" target="_blank"><img src="https://lh6.googleusercontent.com/-vao9pzZoGtk/T6VYC4d1YMI/AAAAAAAAA0U/4rdP2chJido/s48/twitter48.png" width=48 height=48 alt="Síguenos en Twitter" /></a>         
+        </span>
+      </div>
+     
+    </div>
+  </div>   
+</footer>
+{% endblock %}
+ <script src="{{ asset('Public/js/jquery.js') }}"></script>
+        <script src="{{ asset('Public/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('Public/js/jquery-ui-1.12.1/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('Public/js/jqFancyTransitions.js') }}"></script>
+         <script src="{{ asset('Public/js/jquery.slides.js') }}"></script>
+
+        <script>
+          $('.hamburger').click(function () {
+             $('.hamburger').toggleClass('open');
+          });
+        </script>
+  <script>
+    $(function(){
+    $(".slides").slidesjs({
+      play: {
+        active: true,
+          // [boolean] Generate the play and stop buttons.
+          // You cannot use your own buttons. Sorry.
+        effect: "fade",
+          // [string] Can be either "slide" or "fade".
+        interval: 4000,
+          // [number] Time spent on each slide in milliseconds.
+        auto: true,
+          // [boolean] Start playing the slideshow on load.
+        swap: true,
+          // [boolean] show/hide stop and play buttons
+        pauseOnHover: false,
+          // [boolean] pause a playing slideshow on hover
+        restartDelay: 2500
+          // [number] restart delay on inactive slideshow
+      }
+    });
+  });
+  </script>
+  <script>
+    $(".hamburger").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+   
+        {% block javascripts %}
+        
+        {% endblock %}
+    </body>
+</html>

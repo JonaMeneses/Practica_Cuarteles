@@ -1,0 +1,92 @@
+{% if app.user != null %}
+  {% if app.user.role=="ROLE_ADMIN" %}
+    {% set ruta='PrincipalBundle:Plantillas:PlantillaAdmin.html.twig' %}
+  {% else %}
+    {%  set ruta='PrincipalBundle:Plantillas:PlantillaUser.html.twig' %}
+  {% endif %}
+{% else %}
+  {%  set ruta='PrincipalBundle:Plantillas:Plantilla.html.twig' %}
+{% endif %}
+{% extends ruta %}
+{% block title %}
+Cuarteles
+{% endblock %}
+
+{% block body %}
+<div class="">
+    <div class="row">
+        <div class="col-md-12 cuerpo">
+            
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+  <!-- Indicators -->
+ 
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img class="objeto" src="{{ asset('Public/img/1.jpg') }}"  alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item ">
+      <img class="objeto" src="{{ asset('Public/img/2.jpg') }}" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item ">
+      <img class="objeto" src="{{ asset('Public/img/3.jpg') }}" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+        <div class="item ">
+      <img class="objeto" src="{{ asset('Public/img/4.jpg') }}" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+      <div class="item ">
+      <img class="objeto" src="{{ asset('Public/img/5.jpg') }}" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Siguiente</span>
+  </a>
+</div>
+        </div>
+    </div>
+    
+<div class="container-fluid ">
+
+  <div class="row">
+  
+    <div class="col-md-10 contenido">
+    <article class="articulo ">
+      <span align="justify">
+        
+        </span>
+      </article>
+    </div>
+
+    
+
+  </div>
+</div>
+
+
+{% endblock %}
+
+

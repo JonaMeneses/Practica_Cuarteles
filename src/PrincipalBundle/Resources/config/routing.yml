@@ -1,0 +1,119 @@
+principal_homepage:
+    path:     /
+    defaults: { _controller: PrincipalBundle:Default:index }
+
+principal_ruta:
+    path:     /index
+    defaults: { _controller: PrincipalBundle:Principal:Principalindex }
+
+#LOGIN
+
+Login:
+    path:     /login
+    defaults: { _controller: PrincipalBundle:Usuarios:login }
+
+login_check:
+    path:     /login_check
+
+logout:
+    path:     /logout
+
+registro_usuarios:
+  path:       /registro
+  defaults:   {_controller: PrincipalBundle:Usuarios:registro}
+    
+#CuerpoEjercito
+
+addCuerpo:
+  path:       /addCuerpo
+  defaults:   {_controller: PrincipalBundle:Cuerpos:addCuerpo}
+
+listadoCuerpo:
+  path:       /listadoCuerpo
+  defaults:   {_controller: PrincipalBundle:Cuerpos:listadoCuerpos}
+
+delete_Cuerpo:
+  path:       /delete_Cuerpo/{id}
+  defaults:   {_controller: PrincipalBundle:Cuerpos:deleteCuerpo}
+
+edit_Cuerpo:
+  path:       /edit_Cuerpo/{id}
+  defaults:   {_controller: PrincipalBundle:Cuerpos:editCuerpo} 
+
+  #Compañias
+
+addCompania:
+  path:       /addCompania
+  defaults:   {_controller: PrincipalBundle:Companias:addCompania}
+
+listadoCompania:
+  path:       /listadoCompania
+  defaults:   {_controller: PrincipalBundle:Companias:listadoCompanias}
+
+delete_Compania:
+  path:       /delete_Compania/{id}
+  defaults:   {_controller: PrincipalBundle:Companias:deleteCompania}
+
+edit_Compania:
+  path:       /edit_Compania/{id}
+  defaults:   {_controller: PrincipalBundle:Companias:editCompania} 
+
+  #Servicios
+
+addServicio:
+  path:       /addServicio
+  defaults:   {_controller: PrincipalBundle:Servicios:addServicio}
+
+listadoServicio:
+  path:       /listadoServicio
+  defaults:   {_controller: PrincipalBundle:Servicios:listadoServicios}
+
+delete_Servicio:
+  path:       /delete_Servicio/{id}
+  defaults:   {_controller: PrincipalBundle:Servicios:deleteServicio}
+
+edit_Servicio:
+  path:       /edit_Servicio/{id}
+  defaults:   {_controller: PrincipalBundle:Servicios:editServicio} 
+
+  #Cuarteles
+
+addCuartel:
+  path:       /addCuartel
+  defaults:   {_controller: PrincipalBundle:Cuarteles:addCuartel}
+
+listadoCuartel:
+  path:       /listadoCuartel
+  defaults:   {_controller: PrincipalBundle:Cuarteles:listadoCuarteles}
+
+delete_Cuartel:
+  path:       /delete_Cuartel/{id}
+  defaults:   {_controller: PrincipalBundle:Cuarteles:deleteCuartel}
+
+edit_Cuartel:
+  path:       /edit_Cuartel/{id}
+  defaults:   {_controller: PrincipalBundle:Cuarteles:editCuartel} 
+
+  #Soldados
+
+addSoldado:
+  path:       /addSoldado
+  defaults:   {_controller: PrincipalBundle:Soldados:addSoldado}
+
+listadoSoldado:
+  path:       /listadoSoldado
+  defaults:   {_controller: PrincipalBundle:Soldados:listadoSoldados}
+
+delete_Soldado:
+  path:       /delete_Soldado/{id}
+  defaults:   {_controller: PrincipalBundle:Soldados:deleteSoldado}
+
+edit_Soldado:
+  path:       /edit_Soldado/{id}
+  defaults:   {_controller: PrincipalBundle:Soldados:editSoldado} 
+
+
+
+rest_cuartel:
+  path:       /Cuarteles
+  defaults:   {_controller: PrincipalBundle:rest:getCuartel} 

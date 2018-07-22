@@ -1,0 +1,48 @@
+{% extends 'PrincipalBundle:Plantillas:PlantillaAdmin.html.twig' %}
+
+{% block title %}
+Cuerpo
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+
+  <h2><span class="glyphicon glyphicon-list-alt"></span> &nbsp; Registro de Cuerpos de ejercito</h2>
+  <hr>
+  <a href="{{ path('addCuerpo') }}" class="btn btn-success">Nuevo Cuerpo</a>
+  <hr>
+</div>
+  <table class="table table-bordered">
+    <thead>
+      <th>Id</th>
+      <th>Denominacion</th>
+      <th>Opciones</th>
+    </thead>
+    <tbody>
+      {% for a in Cuerpos %}
+        <tr>
+          <td>{{a.id}}</td>
+          <td>{{a.denominacion}}</td>
+          <td><a href="{{path('delete_Cuerpo',{id:a.id})}}" class="btn btn-sucess">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+            <a href="{{path('edit_Cuerpo',{id:a.id})}}" class="btn btn-info">
+              <span class="glyphicon glyphicon-edit"></span>
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</div>
+  
+{% endblock %}
+{% block pie %}
+
+{% endblock %}
+
+

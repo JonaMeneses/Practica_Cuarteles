@@ -1,0 +1,39 @@
+{% extends 'PrincipalBundle:Plantillas:Plantilla.html.twig' %}
+
+{% block title %}
+Cuarteles
+{% endblock %}
+
+{% block body %}
+
+    <img src="{{asset('Public/img/fondo_login.jpg')}}" class="img-fondo-inicio">
+        <div class="fondo-login">
+        <h1 class="titulo1">Iniciar Sesion</h1>
+        <br>
+
+          <form action="checklogin.php" method="post" >
+          <label>Email Usuario:</label><br>
+          <input name="email" type="text" id="email" required style="color:black" placeholder="Escribe tu email">
+          <br><br>
+          <label>Contraseña:</label><br>
+          <input name="password" type="password" id="password" required style="color:black" placeholder="Escribe tu contraseña">
+          <br>
+          <br>
+
+
+
+
+         <input class="btn btn-primary" type="submit" name="Submit" value="Acceder">
+         <input  class="btn btn-primary"  type="button" onclick="history.back()" value="Regresar">
+
+          </form>
+
+        </div>
+
+  
+{% endblock %}
+{% block pie %}
+
+{% endblock %}
+
+

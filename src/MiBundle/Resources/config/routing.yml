@@ -1,0 +1,7 @@
+mi_homepage:
+    path:     /
+    defaults: { _controller: MiBundle:Default:index }
+
+mi_saludo:
+    path:     /saludo
+    defaults: { _controller: MiBundle:Default:index }

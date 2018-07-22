@@ -1,0 +1,21 @@
+PrincipalBundle\Entity\Servicios:
+    type: entity
+    table: servicios
+    id:
+        codigoServicio:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: codigo_servicio
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

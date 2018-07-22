@@ -1,0 +1,60 @@
+{% extends 'PrincipalBundle:Plantillas:PlantillaAdmin.html.twig' %}
+
+{% block title %}
+Cuerpo
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+
+  <h2><span class="glyphicon glyphicon-list-alt"></span> &nbsp; Registro de Soldados</h2>
+  <hr>
+  <a href="{{ path('addSoldado') }}" class="btn btn-success">Nuevo Soldado</a>
+  <hr>
+</div>
+  <table class="table table-bordered">
+    <thead>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Paterno</th>
+      <th>Materno</th>
+      <th>Graduacion</th>
+      <th>Cuerpo</th>
+      <th>Compañia</th>
+      <th>Cuartel</th>
+      <th>Opciones</th>
+    </thead>
+    <tbody>
+      {% for a in Soldados %}
+        <tr>
+          <td>{{a.id}}</td>
+          <td>{{a.nombre}}</td>
+          <td>{{a.paterno}}</td>
+          <td>{{a.materno}}</td>
+          <td>{{a.graduacion}}</td>
+          <td>{{a.fkcodigocuerpo}}</td>
+          <td>{{a.fknumcompania}}</td>
+          <td>{{a.fkcodigocuartel}}</td>
+          <td><a href="{{path('delete_Soldado',{id:a.id})}}" class="btn btn-sucess">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+            <a href="{{path('edit_Soldado',{id:a.id})}}" class="btn btn-info">
+              <span class="glyphicon glyphicon-edit"></span>
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</div>
+  
+{% endblock %}
+{% block pie %}
+
+{% endblock %}
+
+

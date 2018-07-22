@@ -1,0 +1,67 @@
+PrincipalBundle\Entity\Soldados:
+    type: entity
+    table: soldados
+    indexes:
+        fkcodigo_cuerpo:
+            columns:
+                - fkcodigo_cuerpo
+        fknum_compañia:
+            columns:
+                - fknum_compania
+        fkcodigo_cuartel:
+            columns:
+                - fkcodigo_cuartel
+    id:
+        codigoSoldado:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: codigo_soldado
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        paterno:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        materno:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        graduacion:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        fkcodigoCuerpo:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: fkcodigo_cuerpo
+        fknumCompania:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: fknum_compania
+        fkcodigoCuartel:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: fkcodigo_cuartel
+    lifecycleCallbacks: {  }

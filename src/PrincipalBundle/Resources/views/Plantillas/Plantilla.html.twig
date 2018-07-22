@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('Public/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('Public/css/estilos.css') }}">
+        {% endblock %}
+        
+    </head>
+    <body>
+<img src="{{asset('Public/img/militar2.jpg')}}" class="img-fondo-inicio">
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ asset('app_dev.php/index') }}">SMN</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+        
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ asset('app_dev.php/login') }}">Loguearse</a></li>
+        <li><a href="{{ asset('app_dev.php/registro') }}">Registrarse</a></li>
+        <li class="dropdown">
+          
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+</div>
+
+
+        {% block body %}{% endblock %}
+
+        {% block pie %}
+        <footer class="pie">
+  <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-4">
+        
+      </div>
+      <div class="col-md-4">
+        <span align="justify">
+          <h2>Contactame</h2>
+          <p>Email: <a href="">Jona_Meneses@hotmail.com</a><br>
+          Direccion: Avenida Tecnologico s/n. Colonia Los Angeles <br>
+          Telefono: 288-125-59-78</p>
+         
+        </span>
+      </div>
+      <div class="col-md-4">
+       <span align="justify">
+          <h2>Sigueme</h2>
+          <a href="http://www.facebook.com/AQUI_TU_PAGINA" target="_blank"><img alt="Siguenos en Facebook" src="https://lh3.googleusercontent.com/-NSLbC_ztNls/T6VX0g6z8AI/AAAAAAAAA0A/_vyIBrmZbuY/s48/facebook48.png" width=48 height=48  /></a>
+
+          <a href="http://twitter.com/AQUI_TU_USUARIO" target="_blank"><img src="https://lh6.googleusercontent.com/-vao9pzZoGtk/T6VYC4d1YMI/AAAAAAAAA0U/4rdP2chJido/s48/twitter48.png" width=48 height=48 alt="Síguenos en Twitter" /></a>         
+        </span>
+      </div>
+     
+    </div>
+  </div>   
+</footer>
+{% endblock %}
+ <script src="{{ asset('Public/js/jquery.js') }}"></script>
+        <script src="{{ asset('Public/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('Public/js/jquery-ui-1.12.1/jquery-ui.min.js') }}"></script>
+        {% block javascripts %}
+        
+        {% endblock %}
+    </body>
+</html>
